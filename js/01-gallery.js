@@ -8,9 +8,11 @@ const gallery = document.querySelector('div.gallery');
 
 
 galleryItems.map(el => {
-
-    const galleryLink = document.createElement('a');
+    
     const galleryItem = document.createElement('div');
+    const galleryLink = document.createElement('a');
+    galleryLink.href = el.original;
+
     const galleryImage = document.createElement('img');
 
     galleryLink.classList.add('gallery__link');
@@ -21,10 +23,10 @@ galleryItems.map(el => {
     galleryImage.dataset.sourse = el.original;
     galleryImage.alt = el.description;
 
-    galleryItem.append(galleryImage);
-    galleryLink.append(galleryItem);
+    galleryLink.append(galleryImage);
+    galleryItem.append(galleryLink);
     
-    gallery.append(galleryLink);
+    gallery.append(galleryItem);
     return gallery;
 });
 
