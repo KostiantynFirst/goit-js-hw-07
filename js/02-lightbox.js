@@ -19,7 +19,7 @@ galleryItems.map(el => {
     galleryImage.classList.add('gallery__image');
     galleryImage.src = el.preview;
     galleryImage.alt = el.description;
-    galleryImage.title = el.description;
+    // galleryImage.title = el.description;
 
     galleryLink.append(galleryImage);
     // galleryItem.append(galleryLink);
@@ -29,6 +29,8 @@ galleryItems.map(el => {
 });
 
 
-new SimpleLightbox('.gallery a');
+new SimpleLightbox('.gallery a', { captionsData: 'alt'});
 
-
+// options = {
+//     captionsData: 'alt'
+// }
