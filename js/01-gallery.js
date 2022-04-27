@@ -41,11 +41,12 @@ gallery.addEventListener('click', (e) => {
         <img src=${e.target.dataset.sourse} width="800" height="600">
 `, {
         onShow: (e) => {
+            
         window.addEventListener("keydown", (event) => {
             if (event.code === "Escape") { 
                 e.close(); 
                 } 
-            })
+        }, {once: true})
         }
     }).show();
     
